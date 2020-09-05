@@ -2,7 +2,7 @@
 
 ### 脚本功能
 
-这是一个用于助教给学生群发邮件的python脚本，包括了从总表中生成个人的作业成绩并添加到邮件附件的功能(IndividualFileGenerate.py)。表格的格式参见 MailList.xlsx 和 HomeworkGrade.xlsx。
+这是一个用于助教给学生群发邮件的python脚本(GroupMail.py)，包括了从总表中生成个人的作业成绩并添加到邮件附件的功能(IndividualFileGenerate.py)。表格的格式参见 MailList.xlsx 和 HomeworkGrade.xlsx。
 
 调用 IndividualFileGenerate.py 后会自动生成名为 IndividualFiles 的文件，每个人的作业成绩为以学号为名的独立文件，GroupMail.py 可以直接根据 MailList.xlsx 中的学号匹配相应文件作为邮件附件发送，如不需要这个功能，请将 doGenerateIndividualFiles 的值设为 False。
 
