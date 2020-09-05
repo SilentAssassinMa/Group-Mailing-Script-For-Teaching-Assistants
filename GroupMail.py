@@ -22,7 +22,7 @@ if (doGenerateIndividualFiles):
 
 mail_host = 'mail.ustc.edu.cn'  # SMTP server
 mail_user = 'silentassassin@mail.ustc.edu.cn'  # Your Email Address
-mail_pass = '312180532'  # Your Password
+mail_pass = '123456'  # Your Password
 sender = 'silentassassin@mail.ustc.edu.cn'  # The Sender Your Want to Show
 
 inputworkbook = openpyxl.load_workbook("MailList.xlsx", data_only=True)
