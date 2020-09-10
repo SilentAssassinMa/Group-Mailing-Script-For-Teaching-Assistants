@@ -35,10 +35,6 @@ mainbody = '您好, 您本次期末考试的成绩为 :'
 SuccessCount = 0
 FailedAddress = []
 
-smtpObj = smtplib.SMTP()
-smtpObj.connect(mail_host, 25)
-smtpObj.login(mail_user, mail_pass)
-
 for i in range(1, rows + 1):
     content = 'Dear %s %s : \n\n' % (worksheet.cell(
         row=i, column=1).value, worksheet.cell(
@@ -79,7 +75,11 @@ for i in range(1, rows + 1):
 
     print("send to : ", message['To'])
     try:
+        smtpObj = smtplib.SMTP()
+        smtpObj.connect(mail_host, 25)
+        smtpObj.login(mail_user, mail_pass)
         smtpObj.sendmail(sender, receiver, message.as_string())
+        smtpObj.quit()
     except:
         print("Error : Failed Sending Mail to ", receiver)
         FailedAddress.append(receiver)
@@ -94,4 +94,4 @@ if (len(FailedAddress) > 0):
     for address in FailedAddress:
         print(address)
 
-smtpObj.quit()
+
